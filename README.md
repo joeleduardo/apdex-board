@@ -1,4 +1,4 @@
-# Apdex Board Challent
+# Apdex Board Challenge
 
 Download the project then install dependencies by `npm`
 
