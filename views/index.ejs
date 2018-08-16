@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apdex Board</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>
+            Apps by Host <span>for user averylongemailadress@companyname.com</span>
+        </h1>
+        <label for="layoutBtn">
+            <input id='layoutBtn' type='checkbox'/>
+            <span id="layoutBtnTxt">Show as list</span>
+            <span class="checkmark"></span>
+        </label>
+    </header>
+    <section id="content">
+        <% Object.keys(data).map(host => { %>
+        <section>
+            <h2><%= data[host].hostName %></h2>
+            <ul>
+                <% data[host].apps.slice(0, 5).map(item => { %>
+                <li>
+                    <div><%= item.apDex %></div><span onclick="alert('version: <%= item.version%>')"><%= item.name%></span>
+                </li>
+                <% }) %>
+            </ul>
+        </section>
+        <% }) %>
+    </section>
+</div>
+<script src="js/utils.js"></script>
+</body>
+</html>
